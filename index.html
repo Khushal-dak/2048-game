@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048 Puzzle Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Existing Header or Content -->
+  <header>
+    <!-- Your existing header code -->
+  </header>
+
+  <div class="game-container">
+    <div class="header">
+      <h1>2048 Puzzle Game</h1>
+      <div class="controls">
+        <button id="pause-btn">Pause</button>
+        <button id="resume-btn" disabled>Resume</button>
+      </div>
+    </div>
+    <div class="game-grid" id="game-grid">
+      <!-- Blocks will be dynamically added here -->
+    </div>
+    <div class="score-board">
+      <span>Score: <span id="score">0</span></span>
+      <span>Level: <span id="level">1</span></span>
+      <span>Time Left: <span id="timer">30</span>s</span>
+      <span>Moves Left: <span id="moves">Unlimited</span></span>
+      <span>Target Score: <span id="target-score">300</span></span>
+    </div>
+  </div>
+
+  <div id="popup-overlay"></div>
+  <div id="level-popup">
+    <h2>Congratulations! You Won!</h2>
+    <button onclick="nextLevel()">Next Level</button>
+  </div>
+
+  <!-- Existing Footer or Scripts -->
+  <footer>
+    <!-- Your existing footer code -->
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f1e1;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #5d4037;
+}
+
+h1 {
+  font-size: 24px;
+  color: #6d4c41;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 5px;
+  background: linear-gradient(135deg, #6d4c41, #3e2723);
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: #3e2723;
+}
+
+button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+/* Game grid */
+#game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 80px);
+  gap: 10px;
+  background-color: #8d6e63;
+  padding: 10px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Existing responsive styles or classes remain untouched */
+
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #a1887f;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+/* Block colors based on values */
+.block.value-2 {
+  background-color: #d7ccc8;
+  color: #5d4037;
+}
+.block.value-4 {
+  background-color: #b0bec5;
+  color: #5d4037;
+}
+.block.value-8 {
+  background-color: #9e9d24;
+  color: white;
+}
+.block.value-16 {
+  background-color: #f57c00;
+  color: white;
+}
+.block.value-32 {
+  background-color: #f44336;
+  color: white;
+}
+.block.value-64 {
+  background-color: #e64a19;
+  color: white;
+}
+.block.value-128 {
+  background-color: #4caf50;
+  color: white;
+}
+.block.value-256 {
+  background-color: #0288d1;
+  color: white;
+}
+.block.value-512 {
+  background-color: #5e35b1;
+  color: white;
+}
+.block.value-1024 {
+  background-color: #7b1fa2;
+  color: white;
+}
+.block.value-2048 {
+  background-color: #c2185b;
+  color: white;
+}
+
+/* Level popup styles with animation */
+#level-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  z-index: 1000;
+  display: none;
+  animation: popupAnimation 1s ease-out forwards;
+}
+
+#level-popup h2 {
+  font-size: 28px;
+  color: #388e3c;
+}
+
+#popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+/* Popup Animation */
+@keyframes popupAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Container for the score, time, moves, and target score */
+#game-stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+  padding: 10px;
+  background-color: #d7ccc8;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Each label block style */
+.stat-block {
+  padding: 10px 15px;
+  background-color: #6d4c41;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.stat-block label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.stat-block .value {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+/* Styling for Score, Time left, Moves left, Target Score */
+#score-container {
+  background-color: #ff9800;
+}
+
+#timer-container {
+  background-color: #03a9f4;
+}
+
+#moves-container {
+  background-color: #ff5722;
+}
+
+#target-score-container {
+  background-color: #8bc34a;
+}
+
+/* For the labels inside the blocks */
+.stat-block .value {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+/* Add a background for the stats */
+#score-container,
+#timer-container,
+#moves-container,
+#target-score-container {
+  background-color: #8d6e63;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#score-container label,
+#timer-container label,
+#moves-container label,
+#target-score-container label {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* Styling for each individual stat block */
+.stat-block {
+  font-size: 18px;
+  background-color: #6d4c41;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
